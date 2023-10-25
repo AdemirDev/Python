@@ -1,0 +1,98 @@
+
+""""
+usuario digitar entrada e verificar se o numero e positivo, negativo ou zero!
+
+entrada_Valor = int (input("Digite qualquer valor inteiro: "))
+
+if (entrada_Valor > 0):
+    print("Numero Positivo ")
+
+elif (entrada_Valor < 0):
+    print("Numero Negativo ")
+
+else:
+    print(" Valor igual a zero ") 
+
+"""
+
+
+""""
+# verificar se o usuario tem obrigaçao de votar ou e facultativo
+
+idade = int(input("Digite sua idade: "))
+
+if (idade >= 16 and idade < 18):
+    print("Voto Facultativo")
+
+elif (idade >=18 and idade < 66):
+    print("Voto Obrigatorio")
+
+elif (idade > 65):
+    print(" Voto Facultativo (idoso)")
+
+else:
+    print("Voto nao Permitido")    
+
+    """
+
+""""
+
+# usuario digita e numeros e o sistema verifica qual e o maior
+
+numero_1 = float(input("Digite o Primeiro Numero: "))
+numero_2 = float(input("Digite o Segundo Numero: "))
+numero_3 = float(input("Digite o Terceiro Numero: "))
+
+
+
+if (numero_1 > numero_2 and numero_1 > numero_3):
+    print("O Primeiro Numero Digitado e o Maior!!")
+
+elif (numero_2 > numero_1 and numero_2 > numero_3):
+    print("O Segundo Valor Digitado e o Maior ")
+
+else:
+    print(" O Terceiro Valor Digitado e Maior")
+
+    """
+
+""""
+# Verificar se o dia da semana e util ou não
+
+dia_semana = input( "Digite um dia da Semana: ")
+
+if (dia_semana != "sabado" and dia_semana != "domingo"):
+    print(dia_semana, "e um Dia Util")
+else:
+    print(dia_semana, "Dia não util")    
+
+"""
+
+# verificar se numero e par ou impar
+
+numero = int(input("Digite um numero: "))
+
+if (numero % 2 == 0):
+    print("numero Par")
+else:
+     print("Numero impar")
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
