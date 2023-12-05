@@ -1,41 +1,31 @@
-#Criar uma classe Calculadora que possui metodos para adicionar, subtrair, multiplicar e dividir dois numeros
+#criar uma automação com pyautogui, pelo qual o programa abre o bloco de notas e digita ums msg e salva.
 
-class Calculadora:
+import pyautogui
+import time
 
-    #definindo os parametros da calculadora
+# abrir o bloco de notas
 
-    def __init__(self,num_1, num_2):
-        self.num_1 = num_1
-        self.num_2 = num_2
+pyautogui.press('winleft')
+programa ='Bloco'
+pyautogui.write(programa)
+pyautogui.press('enter')
 
-    # criando os metodos da calculadora
 
-    def somar(self, num_1, num_2):
-        num_1 = float(input("Digite o Primeiro Numero: "))
-        num_2 = float(input("Digite o Segundo Numero: "))
-        return num_1+num_2
-    
-    def subtrair(self, num_1, num_2):
-        num_1 = float(input("Digite o Primeiro Numero: "))
-        num_2 = float(input("Digite o Segundo Numero: "))
-        return num_1 - num_2
-    
-    def multiplicar(self, num_1, num_2):
-        num_1 = float(input("Digite o Primeiro Numero: "))
-        num_2 = float(input("Digite o Segundo Numero: "))
-        return num_1 * num_2
-    
-    def dividir(self, num_1, num_2):
-        num_1 = float(input("Digite o Primeiro Numero: "))
-        num_2 = float(input("Digite o Segundo Numero: "))
+time.sleep(2)
 
-        if num_2 == 0:
-            num_1 = float(input("Digite o Primeiro Numero: "))
-            num_2 = float(input("Digite o Segundo Numero: "))
-            print(" Não é possivel divider por 0 ")
-        else:
-            return num_1 / num_2
+
+# escrever uma msg
+
+pyautogui.typewrite("Tentando aprender Python, ainda....")
+
+#salvando a msg automaticamente
+
+pyautogui.hotkey('ctrl', 's')
+nome_arquivo = 'aprendi.txt'
+pyautogui.write(nome_arquivo)
+pyautogui.press('enter')
 
 
 
-        
+
+

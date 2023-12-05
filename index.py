@@ -1,38 +1,63 @@
-class Veiculo:
-    def __init__(self,nome,marca,modelo,potencia,combustivel, n_passageiros):
-        self.nome = nome
-        self.marca = marca
-        self.modelo = modelo 
-        self.potencia = potencia
-        self.combustivel = combustivel
-        self.n_passageiros = n_passageiros
-        
+import pyautogui
+import time
 
-        
-#herança da classe veiculo
-class Automovel(Veiculo):
+#Aguardar alguns segudos antes de iniciar
 
-    def __init__(self,nome,marca,modelo,potencia,combustivel, n_passageiros,cor):
-        self.cor=cor
-        super().__init__(nome,marca,modelo,potencia,combustivel, n_passageiros)
+time.sleep(5)
 
-    def acelerar():
-        print(" O carro acelerou")
+"""#Obtenha e imprima as dimensoes da tela
 
-class Moto(Automovel,Veiculo):
-    print("Ifood")
+largura, altura = pyautogui.size()
+print (f"A largura da tela e: {largura}\n. A altura da tela: {altura}.")
+
+#mover o mouse para coordenadas (x,y) e clique
+
+pyautogui.move(200,200, duration =3)
+pyautogui.click()
+
+#digite algo usando o teclado virtual
+
+pyautogui.typewrite("Hello, word!")
+
+#obter e imrpimir a posição atual do mouse
+
+while True:
+
+    x,y = pyautogui.position()
+    print(f" Aposição atual do mouse e {x} and {y}.")
+
+#exibir um alerta
 
 
-class Pessoa:
-    def __init__(self,nome,sobrenome,endereço):
-        self.nome=nome
-        self.sobrenome = sobrenome
-        self.endereço = endereço
+pyautogui.alert("este e um alerta!")"""
 
-#herança da classe Pessoa
-class Aluno(Pessoa):
-    def __init__(self, matricula,curso,nome,sobrenome,endereço):
-        self.matricula=matricula
-        self.curso = curso
-        super().__init__(nome, sobrenome, endereço)
-   
+
+### abrir programas como o paint
+
+pyautogui.press('winleft')
+programa ='Paint'
+pyautogui.write(programa)
+pyautogui.press('enter')
+
+#aguardar aberturar do programa
+time.sleep(2)
+
+#mover cursos para area de desenho
+
+x =600
+y =500
+pyautogui.move(x,y)
+
+#criar um desenho simples
+
+pyautogui.dragTo(600,600, duration = 1, button ='left')#desenha uma linha simples
+
+pyautogui.dragTo(300,300, duration =1, button ='right') #desenha uma linha simples
+
+#fecha o programa
+
+
+
+
+
+

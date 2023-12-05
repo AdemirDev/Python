@@ -1,25 +1,43 @@
-# criar uma classe aluno com atributos nome idade e notas
-#incrementar metodos para calcular media das notas e vefica se o aluno foi aprovado com media igual ou superior a 6
+#criar uma automação com pyautogui, pelo qual o programa abre o bloco de notas e digita ums msg e salva.
 
-class Aluno:
+import pyautogui
+import time
 
-    def __init__(self, nome, idade, notas):
-        self.nome = nome
-        self.idade = idade
-        self.notas = notas
-        
+# abrir o bloco de notas
 
-
-    def calcular_media_notas(self):
-        return sum(self.notas) / len(self.notas)
-    
-    def verificar_aprovaçao(self):
-        media = self.calcular_media_notas()
-        if media >= 6:
-            return f" {self.nome} "
-    
-    
+pyautogui.press('winleft')
+programa ='Bloco'
+pyautogui.write(programa)
+pyautogui.press('enter')
 
 
+time.sleep(1)
+
+
+# escrever uma msg
+
+pyautogui.typewrite("Devagar e sempre!!!....")
+
+pyautogui.hotkey('ctrl', 'a')
+pyautogui.hotkey('ctrl', 'c')
+
+
+pyautogui.press('winleft')
+programa ='Bloco'
+pyautogui.write(programa)
+pyautogui.press('enter')
+
+pyautogui.hotkey('ctrl', 'v')
+
+time.sleep(1)
+
+pyautogui.hotkey('ctrl', 's')
+
+time.sleep(2)
+
+pyautogui.hotkey('ctrl', 's')
+nome_arquivo = 'teste2.txt'
+pyautogui.write(nome_arquivo)
+pyautogui.press('enter')
 
 
