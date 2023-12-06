@@ -1,17 +1,43 @@
-#Exercício 2: Ler dados de uma planilha
+#criar uma automação com pyautogui, pelo qual o programa abre o bloco de notas e digita ums msg e salva.
 
-import openpyxl
+import pyautogui
+import time
 
-# Carregar a planilha existente
-wb = openpyxl.load_workbook('exercicio1.xlsx')
-ws = wb.active
+# abrir o bloco de notas
 
-# Ler dados de células
-nome = ws['A2'].value
-idade = ws['B2'].value
-print(f'Nome: {nome}, Idade: {idade}')
+pyautogui.press('winleft')
+programa ='Bloco'
+pyautogui.write(programa)
+pyautogui.press('enter')
 
-#wb.save('lendo_planilha.xlsx')
 
-# Fechar a planilha
-wb.close()
+time.sleep(1)
+
+
+# escrever uma msg
+
+pyautogui.typewrite("Devagar e sempre!!!....")
+
+pyautogui.hotkey('ctrl', 'a')
+pyautogui.hotkey('ctrl', 'c')
+
+
+pyautogui.press('winleft')
+programa ='Bloco'
+pyautogui.write(programa)
+pyautogui.press('enter')
+
+pyautogui.hotkey('ctrl', 'v')
+
+time.sleep(1)
+
+pyautogui.hotkey('ctrl', 's')
+
+time.sleep(2)
+
+pyautogui.hotkey('ctrl', 's')
+nome_arquivo = 'teste2.txt'
+pyautogui.write(nome_arquivo)
+pyautogui.press('enter')
+
+
