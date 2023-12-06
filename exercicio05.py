@@ -1,28 +1,22 @@
-# crie uma classe tarefe que representa uma tarefa a ser realizada. a classe deve ter atributos com nome da tarefa, data vencimento, e status (pendende, em adamento e concluida
-# implemente medotos para marcar a tarefa como concluida
+#Exercício 5: Formatar células
 
-class Tarefa:
+import openpyxl
+from openpyxl.styles import Font
 
-    def __init__(self,nome_tarefa, data_vencimento, status):
-        self.nome_tarefa = nome_tarefa
-        self.data_vencimento = data_vencimento
-        self.status = status
+# Carregar a planilha existente
+wb = openpyxl.load_workbook('exercicio4.xlsx')
+ws = wb.active
 
-    def verificar_status(self,status):
-
-        if status == 1:
-            print("Pendente")
-        elif status ==2:
-            print("Em Andamento")
-        elif status==3:
-            print("Concluido")
-        else:
-            print("Opção invalida")
+# Formatar células
+bold_font = Font(bold=True)
+ws['A1'].font = bold_font
+ws['B1'].font = bold_font
+ws['C1'].font = bold_font
+ws['A4'].font = bold_font
 
 
-    def verificar_venciment0(self):
-        data_tarefa = input(" Digite a data da tarefa")
-        #if self.status == 1 and self.data_vencimento > data_tarefa
-           # return f"a tarefa '{self.nome_tarefa}' esta atrasada."
-        
+# Salvar a planilha atualizada
+wb.save('exercicio5.xlsx')
 
+# Fechar a planilha
+wb.close()

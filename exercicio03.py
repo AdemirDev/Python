@@ -1,15 +1,16 @@
-#crie uma classe pessoa que possui um atributo de classe para manter o numero de pessoas criadas. cada vez que vc insancia um objsto da classe pessoa, o contador deve ser incrementado
+#Exercício 3: Atualizar valores de células
 
-class Pessoa:
+import openpyxl
 
-    total_pessoas =0
+# Carregar a planilha existente
+wb = openpyxl.load_workbook('exercicio1.xlsx')
+ws = wb.active
 
-    def __init__(self, nome, idade): 
-        self.nome = nome
-        self.idade = idade
-        Pessoa.total_pessoas += 1
+# Atualizar valores de células
+ws['B3'] = 33
 
-    
+# Salvar a planilha atualizada
+wb.save('exercicio3.xlsx')
 
-    
-
+# Fechar a planilha
+wb.close()
