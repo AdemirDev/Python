@@ -1,20 +1,31 @@
-#Exercício 1: Criar uma planilha e adicionar dados
+#criar uma automação com pyautogui, pelo qual o programa abre o bloco de notas e digita ums msg e salva.
 
-import openpyxl
+import pyautogui
+import time
 
-# Criar uma nova planilha
-wb = openpyxl.Workbook()
-ws = wb.active
+# abrir o bloco de notas
 
-# Adicionar dados às células
-ws['A1'] = 'Nome'
-ws['B1'] = 'Idade'
-ws['A2'] = 'Alice'
-ws['B2'] = 28
-ws['A3'] = 'Bob'
-ws['B3'] = 32
+pyautogui.press('winleft')
+programa ='Bloco'
+pyautogui.write(programa)
+pyautogui.press('enter')
 
-# Salvar a planilha
-wb.save('exercicio1.xlsx')
+
+time.sleep(2)
+
+
+# escrever uma msg
+
+pyautogui.typewrite("Tentando aprender Python, ainda....")
+
+#salvando a msg automaticamente
+
+pyautogui.hotkey('ctrl', 's')
+nome_arquivo = 'aprendi.txt'
+pyautogui.write(nome_arquivo)
+pyautogui.press('enter')
+
+
+
 
 
