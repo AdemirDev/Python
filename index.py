@@ -1,62 +1,44 @@
-import pyautogui
-import time
+import pandas as pd
+import matplotlib.pyplot as plt
 
-#Aguardar alguns segudos antes de iniciar
+# Criação de um DataFrame
+# Passo 1: Dados fictícios
+dados_alunos = {
+    'Nome': ['João', 'Maria', 'Carlos', 'Ana'],
+    'Idade': [18, 20, 19, 22],
+    'Nota_Matematica': [90, 85, 88, 92],
+    'Nota_Portugues': [78, 80, 75, 85]
+}
 
-time.sleep(5)
+# Passo 2: Criar o DataFrame
+df_alunos = pd.DataFrame(dados_alunos)
 
-"""#Obtenha e imprima as dimensoes da tela
+# Passo 3: Exibir o DataFrame
+print(df_alunos)
 
-largura, altura = pyautogui.size()
-print (f"A largura da tela e: {largura}\n. A altura da tela: {altura}.")
+# Análise de Dados:
 
-#mover o mouse para coordenadas (x,y) e clique
+# Média das notas de Matemática
+media_matematica = df_alunos['Nota_Matematica'].mean()
+media_portugues = df_alunos['Nota_Portugues'].mean()
 
-pyautogui.move(200,200, duration =3)
-pyautogui.click()
+# Imprimir a média
+print(f"Média em Matemática: {media_matematica}.")
+print(f"Média de Português: {media_portugues}.")
 
-#digite algo usando o teclado virtual
+###############
 
-pyautogui.typewrite("Hello, word!")
+#Visualização de Dados:
 
-#obter e imrpimir a posição atual do mouse
+#Gráfico de Barra das notas de Matemática
 
-while True:
+df_alunos.plot( x = 'Nome', y=['Nota_Matematica', 'Nota_Portugues'], kind='bar')
 
-    x,y = pyautogui.position()
-    print(f" Aposição atual do mouse e {x} and {y}.")
+plt.title("Notas dos Alunos em Matematica e Portugues")
 
-#exibir um alerta
-
-
-pyautogui.alert("este e um alerta!")"""
-
-
-### abrir programas como o paint
-
-pyautogui.press('winleft')
-programa ='Paint'
-pyautogui.write(programa)
-pyautogui.press('enter')
-
-#aguardar aberturar do programa
-time.sleep(2)
-
-#mover cursos para area de desenho
-
-x =600
-y =500
-pyautogui.move(x,y)
-
-#criar um desenho simples
-
-pyautogui.dragTo(600,600, duration = 1, button ='left')#desenha uma linha simples
-
-pyautogui.dragTo(300,300, duration =1, button ='right') #desenha uma linha simples
-
-#fecha o programa
-
-
+plt.xlabel("Aluno")
+plt.ylabel("Nota")
+plt.show()
 
 
 
