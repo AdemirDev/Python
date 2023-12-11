@@ -1,31 +1,28 @@
-#criar uma automação com pyautogui, pelo qual o programa abre o bloco de notas e digita ums msg e salva.
+"""Exercício logar no e-mail 
+utilizando Selenium"""
 
-import pyautogui
+#Importa as bibliotecas
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 import time
 
-# abrir o bloco de notas
+# Instancia um navegador
+options = webdriver.ChromeOptions()
+options.add_argument('--disable-web-security')
+navegador = webdriver.Chrome(options=options)
 
-pyautogui.press('winleft')
-programa ='Bloco'
-pyautogui.write(programa)
-pyautogui.press('enter')
-
-
+#Digita e busca a URL
+navegador.get("http://gmail.com")
 time.sleep(2)
 
-
-# escrever uma msg
-
-pyautogui.typewrite("Tentando aprender Python, ainda....")
-
-#salvando a msg automaticamente
-
-pyautogui.hotkey('ctrl', 's')
-nome_arquivo = 'aprendi.txt'
-pyautogui.write(nome_arquivo)
-pyautogui.press('enter')
-
-
-
+#Encontrar um elemento pela classe
+elemento = navegador.find_element(By.ID,"identifierId")
+elemento.send_keys("cassio.matematica@gmail.com")
+time.sleep(2)
+elemento.send_keys(Keys.RETURN)
+elemento = navegador.find_element(By.CLASS_NAME,"VfPpkd-vQzf8d")
+time.sleep(2)
+elemento.send_keys(Keys.RETURN)
 
 
